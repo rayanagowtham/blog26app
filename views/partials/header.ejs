@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blogstack</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css"
+        />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
+    </head>
+    <body>
+        <div class="ui grid fixed">
+            <div class="computer only row">
+                <div class="column">
+                    <div class="ui menu">
+                        <div class="header item">
+                            <i class="code icon"></i>Blog Stack
+                        </div>
+                        <a href="/" class="item">Home</a>
+                        <a href="/blogs/new" class="item">New Post</a>
+                        <div class="right menu">
+                            <% if(!currentUser) { %>
+                            <a href="/login" class="item">Login</a>
+                            <a href="/register" class="item">Sign Up</a>
+                            <% } else { %>
+                            <a href="/logout" class="item">Logout</a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tablet mobile only row">
+                <div class="column">
+                    <div class="ui menu">
+                        <a id="mobile_item" class="item"
+                            ><i class="bars icon"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui pushable segment">
+            <div class="ui sidebar vertical menu">
+                <div class="header item">
+                    <i class="code icon"></i>Blog Site
+                </div>
+                <a href="/" class="item">Home</a>
+                <a href="/blogs/new" class="item">New Post</a>
+                <div class="right menu">
+                    <% if(!currentUser) { %>
+                    <a href="/login" class="item">Login</a>
+                    <a href="/register" class="item">Sign Up</a>
+                    <% } else { %>
+                    <a href="/logout" class="item">Logout</a>
+                    <% } %>
+                </div>
+            </div>
+            <!-- <div class="pusher">
+				<div id="content" class="ui segment">
+						Content here
+				</div>
+			</div> -->
+
+            <div class="ui container">
+                <% if(error && error.length > 0) { %>
+                <div class="ui negative message"><p><%=error %></p></div>
+                <% } %> <% if(success && success.length > 0) { %>
+                <div class="ui positive message"><p><%= success %></p></div>
+                <% } %>
+            </div>
+

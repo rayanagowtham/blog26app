@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+<div class="ui main container">
+    <div class="ui huge header">Login</div>
+    <form class="ui form" action="/login" method="POST">
+        <div class="field">
+            <label for="Username">Username</label>
+            <input
+                type="text"
+                id="Username"
+                name="username"
+                placeholder="Username"
+                required
+            />
+        </div>
+        <div class="field">
+            <label for="Password">Password</label>
+            <input
+                type="password"
+                id="Password"
+                name="password"
+                placeholder="Password"
+                required
+            />
+        </div>
+        <div class="field">
+            <div class="ui checkbox">
+                <input type="checkbox" id="terms" required />
+                <label for="terms">I agree to the Terms and Conditions</label>
+            </div>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+        <br /><br />
+        <a href="/blogs">Go Back</a>
+        <p>Don't have an account? <a href="/register">Sign Up</a></p>
+    </form>
+</div>
+
+<% include ../partials/footer %>
